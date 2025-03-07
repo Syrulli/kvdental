@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap');
+:root {
+  --first-color: #0D418F !important;
+  --text-color: #ececec !important;
+  --section: #e4e4e45a !important;
+  --body-color: #ffffff !important;
+  --body-font: 'Poppins', sans-serif;
+}
+/* <--------GLOBAL ELEMENT--------> */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #303030;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  section {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  /* ALL TEXT DESIGN */
+    h2 {
+      font-size: 50px;
+      font-weight: 600;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+    span {
+      color: var(--first-color) !important;
+    }
+    a {
+      text-decoration: none !important;
+    }
+  /* ALL TEXT DESIGN */
+/* <--------GLOBAL ELEMENT--------> */
+
+/* <--------START OF NAV DESIGN--------> */
+  #header {
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+    text-align: center;
+  }
+  #header.scroll, 
+  #header.navbar-collapse-open {
+    background-color: var(--first-color) !important;
+  }
+  .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  .custom-toggler.navbar-toggler {
+    border-color: var(--body-color) !important;
+  }
+  .dropdown-item:hover {
+    background-color: var(--first-color) !important;
+    color: var(--text-color) !important;
+    border-radius: 3px !important;
+  }
+  .nav-link {
+    color: var(--body-color) !important;
+  }
+  .dropdown_notif{
+    width:370px; left:50%; margin-left:-70px;
+  }
+/* <--------END OF NAV DESIGN--------> */
+
+/* <--------START OF FOOTER DESIGN--------> */
+  .footer-bottom {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 1px solid rgb(124, 122, 122);
+  }
+  footer .social-icons {
+    color: black;
+    font-size: 23px;
+    margin-right: 8px;
+  }
+/* <--------END OF FOOTER DESIGN--------> */
+
+/* <--------INDEX SECTION DESIGN--------> */
+  .services-col {
+    flex-basis: 31%;
+    border-radius: 5px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    box-shadow: 13px 13px 21px #7a85cf3f, -13px -13px 21px #dcdcdc50;
+    border-top-left-radius: 20% !important; border-bottom-right-radius: 20% !important;
+  }
+  .services-col:hover {
+    box-shadow: rgba(28, 77, 255, 0.199) -10px 10px, rgba(28, 96, 255, 0.19) -20px 20px ;
+  }
+  /* CAROUSEL INDEX SECTION */
+    .carousel-cell {
+      width: 350px;
+      height: 500px;
+      /* margin-inline-start: 0px; */
+    }
+    .carousel_feedback{
+      margin-top: 20% !important;
+    }
+    .flickity-page-dots {
+      bottom: 1000% !important;
+    }
+  /* CAROUSEL INDEX SECTION */
+  .overlap-main {
+    max-width: 75%;
+    background-color: rgba(255, 255, 255, 0.864);
+    padding: 30px;
+    margin: 0 auto;
+    margin-top: -100px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, .7);
+    border-radius: 10px;
+  }
+  .overlap_section_login{
+    margin-top: -120px;
+  }
+  .overlap_section, .overlap_section_about{
+    margin-top: -250px;
+  }
+  .home-container1-content {
+    position: relative;
+    z-index: 1;
+  }
+  .rate {
+    height: 46px;
+    padding: 0 0px !important;
+    margin: 0 0px !important;
+  }
+  .rate:not(:checked)>input {
+    display: none;
+  }
+  .rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+  }
+  .rate:not(:checked)>label:before {
+    content: '★ ';
+  }
+  .rate>input:checked~label {
+    color: var(--first-color) !important;
+  }
+  .rate:not(:checked)>label:hover,
+  .rate:not(:checked)>label:hover~label {
+    color: var(--first-color) !important;
+  }
+  .rate>input:checked+label:hover,
+  .rate>input:checked+label:hover~label,
+  .rate>input:checked~label:hover,
+  .rate>input:checked~label:hover~label,
+  .rate>label:hover~input:checked~label {
+    color: var(--first-color);
+  }
+  .cert-item {
+    overflow: hidden;
+    position: relative;
+  }
+  .cert-item img,
+  .cert-item .cert-overlay {
+    transition: all 0.4s ease;
+    border-radius: 5px;
+  }
+  .cert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+    opacity: 0;
+    backdrop-filter: blur(5px) saturate(74%);
+    -webkit-backdrop-filter: blur(5px) saturate(74%);
+    background-color: rgba(17, 25, 40, 0.62);
+    border: 5px solid rgba(255, 255, 255, 0);
+  }
+  .cert-item:hover .cert-overlay {
+    opacity: 1;
+  }
+  .cert-item:hover img {
+    transform: scale(1.1);
+  }
+  #uploadedImage{
+    display:none; 
+    border-radius: 3% !important;
+  }
+  .btn-syrulli-ai {
+    position: relative;
+    border: 2px solid rgb(0, 123, 255);
+    animation: pulse 2s infinite;
+  }
+  
+/* <--------INDEX SECTION DESIGN--------> */
+
+/* <--------ADMIN DESIGN--------> */
+  .polygon {
+    stroke: black;
+    stroke-width: 1.5;
+    cursor: pointer;
+  }
+  .unmarked {
+    fill: white;
+  }
+  .decayed{
+    fill: red;
+  }
+  .filled{
+    fill: var(--first-color) !important;
+  }
+  #drawingCanvas {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+  }
+  #toggleDrawing, .syrulli_ai {
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    z-index: 10; 
+  }
+  #stopDrawingBtn{
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+  }
+  #erase{
+    position: fixed;
+    bottom: 9%;
+    right: 15px;
+    z-index: 10; 
+  }
+ 
+  #dental-chart {
+    position: relative; 
+    width: 1000px !important; 
+    height: 580px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  #dental-chart table {
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+  #dental-chart td {
+    padding: 0 10px;
+    padding-bottom: 1.4%;
+    text-align: center;
+    vertical-align: middle;
+  }
+  #dental-chart td.border-left {
+    border-left: 4px solid black;
+  }
+  #dental-chart tr.horizontal_line td {
+    border-top: 4px solid black;
+    padding-top: 1% !important;
+  }
+  .molar svg, .premola svg, .incisor svg {
+    width: 30px !important;
+    height: 50px !important;
+  }
+/* <--------ADMIN DESIGN--------> */
+
+/* <--------ALL ANIMATIONS--------> */
+  @keyframes pulse {
+    0% {
+      border-color: rgba(0, 123, 255, 0.5); 
+      box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7); 
+    }
+    50% {
+      border-color: rgba(0, 123, 255, 0);
+      box-shadow: 0 0 0 10px rgba(0, 123, 255, 0); 
+    }
+    100% {
+      border-color: rgba(0, 123, 255, 0.5);
+      box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); 
+    }
+  }
+  @keyframes bounceDownIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    60% {
+      transform: translateY(10%);
+    }
+    80% {
+      transform: translateY(-5%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .shake-animation {
+    animation: shake 0.3s ease-in-out infinite alternate;
+  }
+  @keyframes shake {
+    from {
+      transform: rotate(-10deg);
+    }
+    to {
+      transform: rotate(10deg);
+    }
+  }
+  .modal {
+    animation: bounceDownIn 0.5s;
+  }
+  .animated-count {
+    font-size: 24px;
+    font-weight: bold;
+    animation: count-up 1.5s ease-out;
+  }
+  @keyframes count-up {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .typing-text {
+    overflow: hidden;
+    white-space: nowrap; 
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+/* <--------ALL ANIMATIONS--------> */
+
+/* <--------RESPONSIVE VIEW --------> */
+  @media(max-width: 820px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+  /* MOBILE VIEW */
+  @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 600px) {
+
+    #dental-chart{
+      width: 50% !important;
+    }
+    .all_responsive_img{
+      width: 350px !important;
+      margin-bottom: 10% !important;
+      margin-left: 7% !important;
+    }
+    .home-container1-content{
+      padding-top: 15rem !important;
+      height: 100vh !important; 
+      min-height: 700px !important;
+    }
+    .services-col {
+      width: 80% !important;
+      margin-left: 10% !important;
+    }
+    .carousel_feedback{
+     margin-top: 15px !important;
+    }
+    .flickity-button{
+      width: 8% !important;
+      height: 5% !important;
+    }
+    .location-frame{
+      width: 100% !important;
+      margin-bottom: 5px !important;
+    }
+    .overlap-main-sm{
+      margin-bottom: 10% !important;
+      max-width: 90% !important;
+      margin-top: -150px;
+    }
+    .overlap_section_about{
+      margin-top: 20px !important;
+    }
+    .img_services{
+      width: 350px !important;
+      border-radius: 5px !important;
+      margin-top: 5% !important;
+      margin-bottom: 5% !important;
+    }
+    p{
+      font-size: small !important;
+    }
+  }
+/* <--------RESPONSIVE VIEW --------> */
