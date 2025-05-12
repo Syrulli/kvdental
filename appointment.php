@@ -28,7 +28,6 @@
                 <p><small><i class="fa-regular fa-clock"></i> Saturday 9:00 AM - 6:00 PM</small></p>
                 <p><small><i class="fa-regular fa-clock"></i> Sunday 9:00 AM - 1:00 PM</small></p>
             </div>
-
             <div class="col-lg-5" id="appointmentDiv" style="display: block;">
                 <div class="card mt-lg-3 shadow bg-body-tertiary rounded">
                     <form id="appointmentForm" class="active">
@@ -160,7 +159,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     </div>

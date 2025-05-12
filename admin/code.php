@@ -237,7 +237,7 @@
         else if (isset($_POST['add_treatmentPlan'])) {
             $patient_id = $_POST['patient_id']; 
             $date = $_POST['date'];
-            $procedure_description = $_POST['procedure_description'];
+            $procedure_description = $_POST['procedure_description']; 
 
             $stmt = $con->prepare("INSERT INTO tbl_treatment_record (id, date, procedure_description) VALUES (?, ?, ?)");
             $stmt->bind_param("iss", $patient_id, $date, $procedure_description);

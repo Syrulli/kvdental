@@ -1633,11 +1633,11 @@
                                                         </div>
                                                         <div class="col-lg-12 d-flex justify-content-end">
                                                             <?php
-                                                            if (isset($_GET['id'])) {
-                                                                $id = $_GET['id'];
-                                                                $tbl_treatment_record = getTreatmentRecordByPatientID($id);
-                                                                $hasTreatmentRecords = mysqli_num_rows($tbl_treatment_record) > 0;
-                                                            }
+                                                                if (isset($_GET['id'])) {
+                                                                    $id = $_GET['id'];
+                                                                    $tbl_treatment_record = getTreatmentRecordByPatientID($id);
+                                                                    $hasTreatmentRecords = mysqli_num_rows($tbl_treatment_record) > 0;
+                                                                }
                                                             ?>
                                                             <a type="button" <?php if (isset($hasTreatmentRecords) && $hasTreatmentRecords) : ?> href="treatment_record.php?id=<?= $data['patient_id']; ?>" <?php else : ?> href="#" data-bs-toggle="modal" data-bs-target="#makeTreatmentPlan" <?php endif; ?> class="btn btn-sm me-2 
                                                                     <?php if (isset($hasTreatmentRecords) && $hasTreatmentRecords) : ?> btn-secondary" title="Treatment Record">Treatment Record <i class="fa-solid fa-file-lines"></i>

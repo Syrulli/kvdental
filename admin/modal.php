@@ -223,48 +223,48 @@
 <!-- ADD PATIENT DAILY WAITING LIST MODAL -->
 
 <!-- ADD TREATMENT RECORD -->
-<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="makeTreatmentPlan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header text-white d-flex justify-content-center" style="background-color: var(--first-color); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
-        <h1 class="modal-title fs-5 text-center text-white" id="exampleModalLabel">Treatment Record Form</h1>
-      </div>
-      <div class="modal-body">
-        <?php
-        if (isset($_GET['id'])) {
-          $id = $_GET['id'];
-        ?>
-          <form action="code.php" method="POST" enctype="multipart/form-data" id="treatmentPlan_form">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="mb-3">
-                  <input type="hidden" name="patient_id" value="<?= htmlspecialchars($id) ?>">
-                  <label class="form-label" for="date"><small><b>Date & Time </b></small><span style="color: red !important;">*</span></label>
-                  <input type="datetime-local" name="date" class="form-control" placeholder="Date & Time" required max="<?php echo date('Y-m-d\TH:i', strtotime('+1 day')); ?>">
+  <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="makeTreatmentPlan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header text-white d-flex justify-content-center" style="background-color: var(--first-color); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+          <h1 class="modal-title fs-5 text-center text-white" id="exampleModalLabel">Treatment Record Form</h1>
+        </div>
+        <div class="modal-body">
+          <?php
+            if (isset($_GET['id'])) {
+              $id = $_GET['id'];
+            ?>
+              <form action="code.php" method="POST" enctype="multipart/form-data" id="treatmentPlan_form">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="mb-3">
+                      <input type="hidden" name="patient_id" value="<?= htmlspecialchars($id) ?>">
+                      <label class="form-label" for="date"><small><b>Date & Time </b></small><span style="color: red !important;">*</span></label>
+                      <input type="datetime-local" name="date" class="form-control" placeholder="Date & Time" required max="<?php echo date('Y-m-d\TH:i', strtotime('+1 day')); ?>">
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="mb-3">
+                      <label class="form-label" for="procedure_description"><small><b>Procedure</b></small><span style="color: red !important;">*</span></label>
+                      <textarea rows="6" type="text" name="procedure_description" class="form-control" placeholder="Procedure." spellcheck="on" required></textarea>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="mb-3">
-                  <label class="form-label" for="procedure_description"><small><b>Procedure</b></small><span style="color: red !important;">*</span></label>
-                  <textarea rows="6" type="text" name="procedure_description" class="form-control" placeholder="Procedure." spellcheck="on" required></textarea>
+                <div class="row">
+                  <p class="text-center "><b><i class="fa-solid fa-circle-exclamation" style="color: red !important;"></i> </b><small>All fields are required.</small></p>
+                  <div class="col-lg-12 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success btn-sm" name="add_treatmentPlan" title="Submit">Submit <i class="fa-solid fa-paper-plane"></i></button>
+                    <a type="button" class="btn btn-danger btn-sm ms-2" title="Cancel" data-bs-dismiss="modal"><small>Cancel <i class="fa-solid fa-ban"></i></small></a>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <p class="text-center "><b><i class="fa-solid fa-circle-exclamation" style="color: red !important;"></i> </b><small>All fields are required.</small></p>
-              <div class="col-lg-12 d-flex justify-content-end">
-                <button type="submit" class="btn btn-success btn-sm" name="add_treatmentPlan" title="Submit">Submit <i class="fa-solid fa-paper-plane"></i></button>
-                <a type="button" class="btn btn-danger btn-sm ms-2" title="Cancel" data-bs-dismiss="modal"><small>Cancel <i class="fa-solid fa-ban"></i></small></a>
-              </div>
-            </div>
-          </form>
-        <?php
-        }
-        ?>
+              </form>
+            <?php
+            }
+          ?>
+        </div>
       </div>
     </div>
   </div>
-</div>
 <!-- ADD TREATMENT RECORD -->
 
 <!-- EDIT ADMIN PROFILE-->
