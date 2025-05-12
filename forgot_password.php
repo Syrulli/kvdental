@@ -1,7 +1,7 @@
 <?php
-session_start();
-$title = "Forgot Password | KV Dental Clinic";
-include('includes/header.php');
+    session_start();
+    $title = "Forgot Password | KV Dental Clinic";
+    include('includes/header.php');
 ?>
 <section style="background-image: url('img/dummy_img_1.png') !important; background-repeat: no-repeat !important; background-attachment: fixed; background-position: center; background-size: cover;">
     <div class="container mt-5" style="width: 35%;">

@@ -22,7 +22,7 @@
                         <a class="btn-sm" title="Sort Appointments" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-sort"></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" style="font-size: small;">
+                        <ul class="dropdown-me  nu dropdown-menu-end" style="font-size: small;">
                             <li><a class="dropdown-item" href="?filter=today">Today's Appointment</a></li>
                             <li><a class="dropdown-item" href="?filter=this_week">This week appointment</a></li>
                             <li><a class="dropdown-item" href="?filter=this_month">This month appointment</a></li>

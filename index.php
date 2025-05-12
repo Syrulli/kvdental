@@ -252,7 +252,6 @@
         </div>
     </div>
 </section>
-
 <script>
     var i = 0;
     var texts = ["Welcome to JC Dental", "Smile Confidentaly.", "Book an appointment."];
@@ -272,7 +271,6 @@
             }
         }, 100);
     }
-
     function deleteText() {
         var text = document.getElementById("text").innerHTML;
         var typingLength = text.length;

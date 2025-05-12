@@ -1,30 +1,30 @@
 <?php
-$title = "Clinic Expenses - KV Dental ";
-include('../middleware/admin_middleware.php');
-include('inc/header.php');
-include('modal.php');
+    $title = "Clinic Expenses - KV Dental ";
+    include('../middleware/admin_middleware.php');
+    include('inc/header.php');
+    include('modal.php');
 
-function getTotalExpensesByYear($year){
-    global $con;
-    $total_expenses = array_fill(0, 12, 0);
-    for ($month = 1; $month <= 12; $month++) {
-        $sql = "SELECT SUM(amount) AS total_amount 
-                        FROM tbl_expenses 
-                        WHERE YEAR(date) = $year AND MONTH(date) = $month";
-        $result = mysqli_query($con, $sql);
+    function getTotalExpensesByYear($year){
+        global $con;
+        $total_expenses = array_fill(0, 12, 0);
+        for ($month = 1; $month <= 12; $month++) {
+            $sql = "SELECT SUM(amount) AS total_amount 
+                            FROM tbl_expenses 
+                            WHERE YEAR(date) = $year AND MONTH(date) = $month";
+            $result = mysqli_query($con, $sql);
 
-        if ($result) {
-            $row = mysqli_fetch_assoc($result);
-            $total_amount = $row['total_amount'];
-            $total_expenses[$month - 1] = $total_amount ? $total_amount : 0;
-        } else {
-            echo "Error: " . mysqli_error($con);
+            if ($result) {
+                $row = mysqli_fetch_assoc($result);
+                $total_amount = $row['total_amount'];
+                $total_expenses[$month - 1] = $total_amount ? $total_amount : 0;
+            } else {
+                echo "Error: " . mysqli_error($con);
+            }
         }
+        return $total_expenses;
     }
-    return $total_expenses;
-}
-$selected_year = isset($_GET['year']) ? $_GET['year'] : date('Y');
-$total_expenses = getTotalExpensesByYear($selected_year);
+    $selected_year = isset($_GET['year']) ? $_GET['year'] : date('Y');
+    $total_expenses = getTotalExpensesByYear($selected_year);
 ?>
 <section>
     <div class="container-fluid px-4 mt-4 mb-5">
@@ -40,11 +40,11 @@ $total_expenses = getTotalExpensesByYear($selected_year);
                     </button>
                     <ul class="dropdown-menu" id="yearDropdown" style="font-size: small;">
                         <?php
-                        $current_year = date('Y');
-                        for ($year = $current_year; $year >= 2024; $year--) {
-                            $selected = $year == $selected_year ? 'selected' : '';
-                            echo '<li><a class="dropdown-item" href="?year=' . $year . '" ' . $selected . '>' . $year . '</a></li>';
-                        }
+                            $current_year = date('Y');
+                            for ($year = $current_year; $year >= 2024; $year--) {
+                                $selected = $year == $selected_year ? 'selected' : '';
+                                echo '<li><a class="dropdown-item" href="?year=' . $year . '" ' . $selected . '>' . $year . '</a></li>';
+                            }
                         ?>
                     </ul>
                 </div>
@@ -53,7 +53,6 @@ $total_expenses = getTotalExpensesByYear($selected_year);
         <canvas id="expensesChart" width="800" height="300"></canvas>
     </div>
 </section>
-
 <section>
     <div class="container-fluid px-4 mt-4" id="delete_clinic_exp">
         <div class="row float-end mb-3">
@@ -73,31 +72,31 @@ $total_expenses = getTotalExpensesByYear($selected_year);
             </thead>
             <tbody>
                 <?php
-                $clinic_expenses = getClinicExpenses();
-                if (mysqli_num_rows($clinic_expenses) > 0) {
-                    foreach ($clinic_expenses as $data) {
-                ?>
-                        <tr>
-                            <td><small><?= $data['date']; ?></small></td>
-                            <td><small><?= $data['billName']; ?></small></td>
-                            <td><small><?= $data['amount']; ?></small></td>
-                            <td>
-                                <img style="width: 30px; height: 30px; border-radius: 30%;" src="../uploaded/<?= $data['image']; ?>">
-                            </td>
-                            <td>
-                                <a title="View Clinic Expenses" class="view-clinic-exp pe-2" data-id="<?= $data['bill_id']; ?>" data-bs-toggle="modal" data-bs-target="#viewClinicExp"><i class="fa-regular fa-eye"></i></a>
-                                <a type="button" value="<?= $data['bill_id']; ?>" class="delete_clinic_exp_btn" title="Delete Clinic Expenses"><i class="fa-solid fa-trash" style="color: red;"></i></a>
-                            </td>
-                        </tr>
-                    <?php
+                    $clinic_expenses = getClinicExpenses();
+                    if (mysqli_num_rows($clinic_expenses) > 0) {
+                        foreach ($clinic_expenses as $data) {
+                        ?>
+                            <tr>
+                                <td><small><?= $data['date']; ?></small></td>
+                                <td><small><?= $data['billName']; ?></small></td>
+                                <td><small><?= $data['amount']; ?></small></td>
+                                <td>
+                                    <img style="width: 30px; height: 30px; border-radius: 30%;" src="../uploaded/<?= $data['image']; ?>">
+                                </td>
+                                <td>
+                                    <a title="View Clinic Expenses" class="view-clinic-exp pe-2" data-id="<?= $data['bill_id']; ?>" data-bs-toggle="modal" data-bs-target="#viewClinicExp"><i class="fa-regular fa-eye"></i></a>
+                                    <a type="button" value="<?= $data['bill_id']; ?>" class="delete_clinic_exp_btn" title="Delete Clinic Expenses"><i class="fa-solid fa-trash" style="color: red;"></i></a>
+                                </td>
+                            </tr>
+                        <?php
+                        }
+                    } else {
+                        ?>
+                            <tr>
+                                <td colspan="6">No Clinic Expenses found.</td>
+                            </tr>
+                        <?php
                     }
-                } else {
-                    ?>
-                    <tr>
-                        <td colspan="6">No Clinic Expenses found.</td>
-                    </tr>
-                <?php
-                }
                 ?>
             </tbody>
         </table>

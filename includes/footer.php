@@ -1,7 +1,6 @@
 <button class="btn btn-primary syrulli_ai rounded-circle btn-syrulli-ai" title="Use AI" type="button" data-bs-toggle="offcanvas" data-bs-target="#syrulli_ai" aria-controls="staticBackdrop">
     <i class="fa-solid fa-robot"></i>
 </button>
-
 <div class="offcanvas offcanvas-end" tabindex="-1" id="syrulli_ai" aria-labelledby="staticBackdropLabel" style="border-top-left-radius: 15px !important; border-bottom-left-radius: 15px !important;">
     <div class="offcanvas-body">
         <div>
@@ -34,12 +33,10 @@
             </div>
         </div>
     </div>
-
     <div class="offcanvas-footer" style="background-color: #F8D7DA; border-left: 0.25rem solid #FA4245; border-bottom-left-radius: 15px !important;">
         <p style="font-size: smaller !important;" class="text-center pt-3"><i class="fa-solid fa-circle-exclamation" style="color: red !important;"></i><small> It's important to remember that <span>syrulli</span> can make a mistake. Consult with your dentist for a thorough evaluation.</small></p>
     </div>
 </div>
-
 <footer>
     <div class="footer-bottom">
         <div class="container">
@@ -146,7 +143,7 @@
 
             const prediction = await model.predict(uploadedImage);
 
-            const thresholdProbability = 0.5; // Adjust if needed
+            const thresholdProbability = 0.5; 
 
             let highestPrediction = prediction[0];
             for (let i = 1; i < prediction.length; i++) {
@@ -181,31 +178,30 @@
                     serviceText = "For mild tooth decay, a fluoride treatment is essential. It helps to remineralize the enamel and prevent further progression.";
 
                 } else if (highestPrediction.className === "Gingivitis") {
-                    daysToAdd = 7; // Typical follow-up for gingivitis
+                    daysToAdd = 7; 
                     paragraphText = "Your gums seem to have some gingivitis if left untreated, can lead to more severe periodontal issues over time. Within the first month, you might notice increased redness, swelling, and bleeding of the gums, especially during brushing or flossing. If not addressed, gingivitis can progress, leading to more pronounced symptoms such as persistent bad breath and gum recession within 2 to 3 months. Over 6 months to a year, untreated gingivitis can develop into periodontitis, causing deeper gum infection, potential loss of tooth-supporting bone, and more serious oral health complications.";
                     recommendationsText = "Consult the Dentist: within this week if you feel symptoms like red, swollen, or bleeding gums, persistent bad breath, or tenderness while brushing or flossing, To manage gingivitis effectively, maintain excellent oral hygiene practices. Brush your teeth at least twice daily with a fluoride toothpaste and floss daily to remove plaque buildup wom between teeth and under the gumline. Use an antimicrobial mouthwash to help reduce plaque and bacteria. Regularly clean your toothbrush and replace it every 3 to 4 months.";
                     serviceText = "KV Dental Clinic offers a dental cleaning service to remove plaque and tartar, allowing your gums to heal and reducing the risk of further progression.";
                 } else if (highestPrediction.className === "Malocclusion") {
-                    daysToAdd = 30; // Follow-up for malocclusion
+                    daysToAdd = 30; 
 
                     paragraphText = "There appears to be some misalignment in your teeth. If left untreated,  Within a month, you might notice increased difficulty in biting or chewing, as well as discomfort or irregular wear on your teeth. If the condition persists untreated, it can exacerbate, potentially leading to uneven tooth wear, jaw pain, and difficulties with speech or dental hygiene. Over several months, untreated malocclusion can contribute to more severe problems, including temporomandibular joint (TMJ) disorders and accelerated tooth decay due to misaligned teeth making it harder to clean effectively.";
                     recommendationsText = "Make an appointment: you can consult the dentist with this month to see the condition of your malocclusion. To manage malocclusion, it's important to maintain good oral hygiene and avoid habits that could worsen the condition, such as teeth grinding or nail-biting. In addition to regular brushing and flossing, consider using a mouthguard if you grind your teeth at night. It is also beneficial to monitor any changes in bite or jaw alignment and address discomfort promptly.";
                     serviceText = "Visit KV Dental Clinic to evaluate your alignment and provide treatments such as braces or aligners to correct misalignment.";
                 } else if (highestPrediction.className === "Discolored Teeth") {
-                    daysToAdd = 15; // Follow-up for discoloration
+                    daysToAdd = 15;
 
                     paragraphText = "Your teeth seem to have some discoloration, If discolored teeth are left untreated, the progression can vary based on the underlying cause. In 1 to 3 months, the discoloration may become more pronounced, especially if it is due to staining from foods, beverages, or smoking. If the discoloration is due to deeper issues like tooth decay or internal damage, it could become more severe and noticeable within 3 to 6 months. Over 6 to 12 months, untreated discoloration may lead to more significant aesthetic concerns, potentially affecting self-esteem and requiring more intensive treatments to address the underlying cause and improve the appearance of the teeth.";
                     recommendationsText = "Make an appointment: To address discolored teeth, start by practicing good oral hygiene. Brush your teeth twice a day with a whitening toothpaste to help remove surface stains, and floss daily to prevent plaque buildup. Avoid foods and beverages that can cause staining, such as coffee, tea, and red wine. Additionally, consider using an over-the-counter whitening product if the discoloration is superficial. For persistent or severe discoloration, professional whitening treatments or dental evaluations may be necessary to determine the underlying cause and appropriate solutions.";
                     serviceText = "KV Dental Clinic offers cleaning and polishing treatment to effectively remove deeper stains and enhance the brightness of your teeth.";
                 } else if (highestPrediction.className === "Missing Teeth") {
-                    daysToAdd = 7; // Follow-up for missing teeth
+                    daysToAdd = 7; 
 
                     paragraphText = "It looks like there are some missing teeth. If teeth are missing and not replaced or treated, the consequences can unfold over time. Within 1 to 3 months, surrounding teeth may begin to shift towards the gap, potentially leading to misalignment and bite issues. The loss of tooth structure can also affect chewing efficiency and impact overall oral health. Over the next 6 to 12 months, the bone in the jaw where the tooth was lost may start to deteriorate due to lack of stimulation, which can further complicate future restorative options. If the missing teeth are not addressed within 1 to 2 years, significant changes in bite alignment and bone loss can occur, making restorative treatments more complex and costly.";
                     recommendationsText = "Consult a dentist: To manage missing teeth, consider scheduling a consultation with a dentist to discuss replacement options. Dental implants, bridges, or dentures can restore function and aesthetics, preventing the shifting of adjacent teeth and maintaining proper bite alignment. Immediate attention to missing teeth is crucial to avoid complications such as bone loss and misalignment.";
                     serviceText = "KV Dental Clinic offers dental implants or bridge placement to restore function and prevent adjacent teeth from shifting.";
                 }
 
-               // Logic to autofill the appointment
                 if (highestPrediction.className !== "Healthy Teeth" && highestPrediction.probability >= thresholdProbability) {
                     const today = new Date();
                     today.setDate(today.getDate() + daysToAdd);
@@ -267,7 +263,6 @@
         }
         type();
     }
-
     document.getElementById('syrulli_ai').addEventListener('shown.bs.offcanvas', init);
 </script>
 

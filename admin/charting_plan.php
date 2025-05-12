@@ -1592,8 +1592,6 @@
                                                             </div>
                                                             <h6 class="mt-2 ps-3 pe-5"><b>LEFT</b></h6>
                                                         </div>
-
-                                                        <!-- SELECTIONS -->
                                                         <div class="row mt-2 mb-4">
                                                             <div class="col-4">
                                                                 <select class="form-select form-select-sm"  id="conditions">

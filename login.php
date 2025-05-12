@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $title = "Login | Quezon City Academy";
+  $title = "Login | KV Dental Clinic";
   if (isset($_SESSION['auth'])) {
     $_SESSION['error_message'] = "You already Logged in";
     header('Location: admin/index.php');

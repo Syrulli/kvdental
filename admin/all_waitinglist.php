@@ -18,8 +18,6 @@
                 Add patient <i class="fa-solid fa-circle-plus ms-2"></i>
             </a>
         </div>
-
-  
         <table style="font-size: small;" class="table table-striped table-wrapper-scroll-y my-custom-scrollbar text-center shadow p-3 mb-5 bg-body-tertiary rounded">
             <thead>
                 <tr>

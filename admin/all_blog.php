@@ -1,5 +1,5 @@
 <?php
-    $title = "TT ( TAGGED TOOLS) INVENTORY";
+    $title = "News & Blogs";
     include('../middleware/admin_middleware.php');
     include('inc/header.php');
     include('modal.php');
@@ -7,7 +7,7 @@
 <section>
     <div class="container-fluid px-4 mt-4" id="all_blog_table">
         <div class="row">
-            <h3 class="float-start">Tagged Tools <span>Inventory</span></h3>
+            <h3 class="float-start">News <span>&</span> Blogs</h3>
             <hr>
         </div>
         <button title="Add News & Blogs" type="button" class="btn btn-primary mb-3 float-end btn-sm" data-bs-toggle="modal" data-bs-target="#add_blog_btn">

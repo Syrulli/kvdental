@@ -25,7 +25,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-xl-3 col-md-6 mb-3">
                 <div class="card text-center shadow bg-body-tertiary rounded">
                     <div class="card-header bg-primary text-white">
@@ -44,7 +43,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-xl-3 col-md-6 mb-3">
                 <div class="card text-center shadow bg-body-tertiary rounded">
                     <div class="card-header bg-primary text-white">
@@ -63,7 +61,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-xl-3 col-md-6">
                 <div class="card text-center shadow bg-body-tertiary rounded">
                     <div class="card-header bg-primary text-white">
@@ -85,7 +82,6 @@
         </div>
     </div>
 </section>
-
 <section>
     <div class="container-fluid px-4 mt-5">
         <div class="row float-end mb-3">
@@ -167,7 +163,6 @@
 
         var animation = setInterval(updateCount, 130); 
     }
-
     animateCount('appointmentCount', appointmentCount);
     animateCount('followUpSchedCount', followUpSchedCount);
     animateCount('todays_app', todays_app);
