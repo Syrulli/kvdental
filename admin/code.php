@@ -2,57 +2,6 @@
     include('../config/dbcon.php');
     include('../functions/myfunction.php');
 
-    // UPDATE PATIENT INFO FUNCTIONS      
-        // if (isset($_POST['update_patient_btn'])) {
-        //     // Fetch all values
-        //     $tbl_patient_info_id = $_POST['tbl_patient_info_id'];
-        //     $patient_name = $_POST['patient_name'];
-        //     $age = $_POST['age'];
-        //     $gender = $_POST['gender'];
-        //     $service = $_POST['service'];
-        //     $IsNewPatient = $_POST['IsNewPatient'];
-        //     $hmo = $_POST['hmo'];
-        //     $timeSlot = $_POST['timeSlot'];
-        //     $appointment_date = $_POST['appointment_date'];
-        //     $email = $_POST['email'];
-        //     $phone = $_POST['phone'];
-        //     $address = $_POST['address'];
-        //     $note = $_POST['note'];
-        //     $dob = $_POST['dob'];
-            
-        //     // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        //     //     redirect("all_appointments.php", "Invalid email format");
-        //     //     exit();
-        //     // }
-
-        //     $stmt = $con->prepare("UPDATE tbl_appointments SET 
-        //         patient_name = ?, 
-        //         age = ?, 
-        //         gender = ?, 
-        //         service = ?,
-        //         IsNewPatient = ?,
-        //         hmo = ?,
-        //         timeSlot = ?,
-        //         appointment_date = ?,
-        //         email = ?, 
-        //         phone = ?, 
-        //         address = ?, 
-        //         note = ?, 
-        //         dob = ?
-        //         WHERE patient_id = ?");
-        //     $stmt->bind_param("sssssssssssssi", $patient_name, $age, $gender, $service, $IsNewPatient, $hmo, $timeSlot, $appointment_date, $email, $phone, $address, $note, $dob, $tbl_patient_info_id);
-
-        //     if ($stmt->execute()) {
-        //         $stmt->close();
-        //         redirect("all_appointments.php?id=$tbl_patient_info_id", "Patient Informations Updated Successfully!");
-        //     } else {
-        //         $stmt->close();
-        //         error("all_appointments.php?id=$tbl_patient_info_id", "Something Went Wrong!");
-        //         exit();
-        //     }
-        // }
-    // UPDATE PATIENT INFO FUNCTIONS
-
     // UPDATE ACC FUNCTIONS
         if (isset($_POST['update_acc_btn'])) {
             $modal_update_acc = $_POST['modal_update_acc'];

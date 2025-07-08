@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2025 at 02:39 AM
+-- Generation Time: May 26, 2025 at 06:07 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -236,7 +236,7 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`id`, `name`, `email`, `dob`, `phone`, `password`, `reset_token`, `reset_token_expire`, `role_as`, `created_at`, `updated_at`) VALUES
-(1, 'Neil Bayona', 'lloydlanguido@gmail.com', '1970-01-02', '09326073245', '$2y$10$nYgoBM86LwATjeQ5dBGRV.eYNmJkwGYuC3In62RA9VGU9jWT0y2i.', NULL, NULL, 1, '2024-01-21 10:03:21', '2024-08-31 10:16:05');
+(1, 'Lloyd Sydlik', 'lloydlanguido@gmail.com', '1970-01-02', '09326073245', '$2y$10$7sewU4ZVrtMKFxPa9hs3WuJsFp8NT2B52sfQxz2nJr/7THLlRaeiO', NULL, NULL, 1, '2024-01-21 10:03:21', '2024-08-31 10:16:05');
 
 --
 -- Indexes for dumped tables

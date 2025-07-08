@@ -15,7 +15,7 @@
           </g>
         </g>
       </svg>
-      JC Dental Clinic
+      KV Dental Clinic
     </a>
     <button class="navbar-toggler custom-toggler" style="border: none !important;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" style="color:#fff !important;">
