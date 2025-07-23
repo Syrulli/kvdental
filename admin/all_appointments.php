@@ -11,25 +11,12 @@
             <hr>
         </div>
         <div class="row float-end mb-3">
-            <div class="col-10">
+            <div class="col-12">
                 <form class="d-flex" role="search">
                     <input id="searchInput" class="form-control " type="search" placeholder="Search Patient Name..." aria-label="Search">
                 </form>
             </div>
-            <div class="col-2 mt-1">
-                <div class="d-flex justify-content-end me-3">
-                    <div class="dropdown">
-                        <a class="btn-sm" title="Sort Appointments" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-sort"></i>
-                        </a>
-                        <ul class="dropdown-me  nu dropdown-menu-end" style="font-size: small;">
-                            <li><a class="dropdown-item" href="?filter=today">Today's Appointment</a></li>
-                            <li><a class="dropdown-item" href="?filter=this_week">This week appointment</a></li>
-                            <li><a class="dropdown-item" href="?filter=this_month">This month appointment</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+           
         </div>
         <table style="font-size: small;" class="table table-striped table-wrapper-scroll-y my-custom-scrollbar text-center shadow p-3 mb-5 bg-body-tertiary rounded">
             <thead>

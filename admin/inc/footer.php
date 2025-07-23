@@ -1,7 +1,7 @@
         <footer class="py-4 bg-light mt-auto postion">
             <div class="container-fluid px-4">
                 <div class="small text-center">
-                    <div class="text-muted">&copy;KV Dental Clinic | All rights reserved.</div>
+                    <div class="text-muted">&copy;Dental Clinic | All rights reserved.</div>
                 </div>
             </div>
         </footer>
